@@ -3,8 +3,8 @@ name: Actions Workflow
 on: 
   repository_dispatch:
     types: [build]
-  # schedule:
-  #   - cron: "0 20 * * 1"
+  schedule:
+    - cron: "0 20 * * 1"
   push:
     branches-ignore:
       - develop
