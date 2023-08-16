@@ -5,7 +5,15 @@ on:
     types: [build]
   # schedule:
   #   - cron: "0 20 * * 1"
-  # push:
+  push:
+    branches-ignore:
+      - develop
+
+    # branches: 
+    #   - master
+    #   - 'feature/*' #matches feature/featA, feature/featB
+    #   - 'feature/**' #matches feature/featA/cat feature/featB/dogAndCat
+    #   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
   # pull_request:
   #   types: [ closed, assigned, opened]
 
@@ -13,9 +21,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
      steps:
-
-      - name: payload
-        run: echo $${github.event.client_payload.env}}
+      # - name: payload
+      #   run: echo $${github.event.client_payload.env}}
       # - name: List files
       #   run:  |
       #     pwd
