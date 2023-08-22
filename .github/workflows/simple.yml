@@ -10,7 +10,7 @@ jobs:
     steps: 
       - name: echo env on stage
         run: |
-          echo "${{vars.ENVIRONMENT_STAGE }}}}"
+          echo "${{vars.ENVIRONMENT_STAGE }}"
           echo "${{vars.ENVIRONMENT_STAGE.TWILIO_ID}}"
       
   check-env-preprod:
