@@ -3,16 +3,23 @@ name: Shell commands
 on: [push, pull_request]
 
 jobs:
-  check-env:
+  check-env-stage:
     runs-on: ubuntu-latest
     environment: ${{ vars.ENV }}
     steps: 
-      - name: echo env 
+      - name: echo env on stage
         run: |
           echo "${{vars.ENV}}"
           echo "${{vars.TWILIO_ID}}"
       
-    
+  check-env-preprod:
+    runs-on: ubuntu-latest
+    environment: ${{ vars.ENV }}
+    steps: 
+      - name: echo env on preprod
+        run: |
+          echo "${{vars.ENV}}"
+          echo "${{vars.TWILIO_ID}}"
 #       - name: python commands
 #         run: |
 #           import platform
