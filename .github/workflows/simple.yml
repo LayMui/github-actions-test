@@ -10,8 +10,8 @@ jobs:
     steps: 
       - name: echo env on stage
         run: |
-          echo "${{vars.ENV}}"
-          echo "${{vars.TWILIO_ID}}"
+          echo "${{vars.environment.stage}}"
+          echo "${{vars.environment.stage.TWILIO_ID}}"
       
   check-env-preprod:
     runs-on: ubuntu-latest
@@ -20,8 +20,9 @@ jobs:
     steps: 
       - name: echo env on preprod
         run: |
-          echo "${{vars.ENV}}"
-          echo "${{vars.TWILIO_ID}}"
+          echo "${{vars.environment.stage}}"
+          echo "${{vars.environment.stage.TWILIO_ID}}"
+    
 #       - name: python commands
 #         run: |
 #           import platform
