@@ -3,12 +3,12 @@ name: Shell commands
 on: [push, pull_request]
 
 jobs:
-  run-shell-commands:
+  check-env:
     runs-on: ubuntu-latest
     environment: ${{ vars }}
     steps: 
       - name: echo env var
-        run: echo "${{vars.ENV}}""
+        run: echo "${{vars}}""
       
     
 #       - name: python commands
