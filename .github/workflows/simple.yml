@@ -18,8 +18,8 @@ jobs:
     
     steps: 
       - name: echo env on preprod
-      with: 
-        ENV: preprod
+        env:
+          ENV: preprod
         run: |
           echo "${{vars.ENV }}"
           echo "${{vars.TWILIO_ID}}"
