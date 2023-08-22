@@ -5,13 +5,11 @@ on: [push, pull_request]
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
+    environment: ${{ vars }}
     steps: 
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script
-        run:  |
-          node -v
-          npm -v
+      - name: echo env var
+        run: echo "${{vars.ENV}}""
+      
     
 #       - name: python commands
 #         run: |
