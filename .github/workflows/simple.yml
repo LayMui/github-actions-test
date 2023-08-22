@@ -1,33 +1,33 @@
-name: Shell commands
+# name: Shell commands
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  run-shell-commands:
-    runs-on: ubuntu-latest
-    steps: 
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script
-        run:  |
-          node -v
-          npm -v
+# jobs:
+#   run-shell-commands:
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: echo a string
+#         run: echo "Hello World"
+#       - name: multiline script
+#         run:  |
+#           node -v
+#           npm -v
     
-      - name: python commands
-        run: |
-          import platform
-          print 
-          (platform.processor())
-        shell: python
+#       - name: python commands
+#         run: |
+#           import platform
+#           print 
+#           (platform.processor())
+#         shell: python
 
-  run-windows-commands:
-    runs-on: windows-latest
-    needs: ['run-shell-commands']
-    steps:
-      - name: Directory Powershell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
+#   run-windows-commands:
+#     runs-on: windows-latest
+#     needs: ['run-shell-commands']
+#     steps:
+#       - name: Directory Powershell
+#         run: Get-Location
+#       - name: Directory Bash
+#         run: pwd
+#         shell: bash
 
 
