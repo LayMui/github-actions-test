@@ -5,10 +5,10 @@ on: [push, pull_request]
 jobs:
   check-env:
     runs-on: ubuntu-latest
-    environment: ${{ vars }}
+    environment: ${{ vars.ENV }}
     steps: 
-      - name: echo env var
-        run: echo "${{vars}}""
+      - name: echo env 
+        run: echo "${{vars.ENV}}""
       
     
 #       - name: python commands
