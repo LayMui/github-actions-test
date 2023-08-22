@@ -5,12 +5,11 @@ on: [push, pull_request]
 jobs:
   check-env-stage:
     runs-on: ubuntu-latest
-    env:
-      ENV: stage
+    environment: stage
     steps: 
       - name: echo env on stage
         run: |
-          echo "${{vars.ENV }}"
+          echo "${{vars.stage }}"
           echo "${{vars.TWILIO_ID}}"
       
   check-env-preprod:
