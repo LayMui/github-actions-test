@@ -5,7 +5,8 @@ on: [push, pull_request]
 jobs:
   check-env-stage:
     runs-on: ubuntu-latest
-    environment: ${{ vars.environment.stage }}
+    env:
+      ENV: stage
     steps: 
       - name: echo env on stage
         run: |
@@ -14,7 +15,8 @@ jobs:
       
   check-env-preprod:
     runs-on: ubuntu-latest
-    environment: ${{ vars.environment.preprod }}
+    env:
+      ENV: preprod
     steps: 
       - name: echo env on preprod
         run: |
