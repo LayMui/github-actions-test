@@ -14,8 +14,7 @@ jobs:
       
   check-env-preprod:
     runs-on: ubuntu-latest
-    env:
-      ENV: preprod
+    environment: preprod
     steps: 
       - name: echo env on preprod
         run: |
