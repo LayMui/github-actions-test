@@ -18,3 +18,11 @@ jobs:
         steps:
             - name: sw version
               run: sw_vers
+    
+
+    dependent-jobs:
+        runs-on: windows-latest
+        needs: print_hello_world
+        steps: 
+            - name: run on powershell
+              run: Write-output "Window Sttring"
