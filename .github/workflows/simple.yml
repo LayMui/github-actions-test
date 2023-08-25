@@ -1,41 +1,41 @@
-name: Shell commands
+# name: Shell commands
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  check-env-stage:
-    runs-on: ubuntu-latest
-    environment: stage
-    steps: 
-      - name: echo env on stage
-        run: |
-          echo "${{vars.stage }}"
-          echo "${{vars.TWILIO_ID}}"
-      
-  check-env-preprod:
-    runs-on: ubuntu-latest
-    environment: preprod
-    steps: 
-      - name: echo env on preprod
-        run: |
-          echo "${{vars.ENV }}"
-          echo "${{vars.TWILIO_ID}}"
-    
-#       - name: python commands
+# jobs:
+#   check-env-stage:
+#     runs-on: ubuntu-latest
+#     environment: stage
+#     steps: 
+#       - name: echo env on stage
 #         run: |
-#           import platform
-#           print 
-#           (platform.processor())
-#         shell: python
+#           echo "${{vars.stage }}"
+#           echo "${{vars.TWILIO_ID}}"
+      
+#   check-env-preprod:
+#     runs-on: ubuntu-latest
+#     environment: preprod
+#     steps: 
+#       - name: echo env on preprod
+#         run: |
+#           echo "${{vars.ENV }}"
+#           echo "${{vars.TWILIO_ID}}"
+    
+# #       - name: python commands
+# #         run: |
+# #           import platform
+# #           print 
+# #           (platform.processor())
+# #         shell: python
 
-#   run-windows-commands:
-#     runs-on: windows-latest
-#     needs: ['run-shell-commands']
-#     steps:
-#       - name: Directory Powershell
-#         run: Get-Location
-#       - name: Directory Bash
-#         run: pwd
-#         shell: bash
+# #   run-windows-commands:
+# #     runs-on: windows-latest
+# #     needs: ['run-shell-commands']
+# #     steps:
+# #       - name: Directory Powershell
+# #         run: Get-Location
+# #       - name: Directory Bash
+# #         run: pwd
+# #         shell: bash
 
 

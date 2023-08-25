@@ -1,0 +1,14 @@
+name: My first workflow
+on: [ push]
+
+jobs:
+    print_hello_world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "Hello world"
+
+            - name: Run multiple command
+              run: |
+                node -v
+                npm -v
