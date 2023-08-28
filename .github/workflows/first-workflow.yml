@@ -25,4 +25,4 @@ jobs:
         needs: print_hello_world
         steps: 
             - name: run on powershell
-              run: Write-output "Window Sttring"
+              run: Write-Output  "Window String"
