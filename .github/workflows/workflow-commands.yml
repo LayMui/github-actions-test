@@ -1,27 +1,27 @@
-name: Workflow Commands
-on: [push]
+# name: Workflow Commands
+# on: [push]
 
-jobs:
-    testing-wf-commands:
-        runs-on: ubuntu-latest
-        steps: 
-          - name: Setting an error message
-            run: echo "::error::Missing semicolons"
+# jobs:
+#     testing-wf-commands:
+#         runs-on: ubuntu-latest
+#         steps: 
+#           - name: Setting an error message
+#             run: echo "::error::Missing semicolons"
         
-          - name: Setting an error message with param
-            run: echo "::error title=error title, file=app.js, line 2,endLine=3, col=5, endColumn=7::Missing semicolor"
+#           - name: Setting an error message with param
+#             run: echo "::error title=error title, file=app.js, line 2,endLine=3, col=5, endColumn=7::Missing semicolor"
 
-          - name: Setting a debug message with param
-            run: echo "::debug title=debug title, file=app.js, line 2,endLine=3, col=5, endColumn=7::Missing semicolor"
+#           - name: Setting a debug message with param
+#             run: echo "::debug title=debug title, file=app.js, line 2,endLine=3, col=5, endColumn=7::Missing semicolor"
 
-          - name: Group of logs
-            run: |
-                echo "::group::My group title"
-                echo "Inside group"
-                echo "::endgroup::"
+#           - name: Group of logs
+#             run: |
+#                 echo "::group::My group title"
+#                 echo "Inside group"
+#                 echo "::endgroup::"
 
-          - name: Masking a value
-            run: "::add-mask:: Secret String"
+#           - name: Masking a value
+#             run: "::add-mask:: Secret String"
           
-          - name: echo a secret
-            run: echo "Secret String"
+#           - name: echo a secret
+#             run: echo "Secret String"
