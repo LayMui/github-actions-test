@@ -1,0 +1,54 @@
+name: My first workflow
+on: [ push]
+
+jobs:
+    print_hello_world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "Hello world"
+
+            - name: Run multiple command
+              run: |
+                node -v
+                npm -v
+            
+            - name: Send a message to Microsoft Teams
+              uses: aliencube/microsoft-teams-actions@v0.8.0
+              with:
+                webhook_uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
+                title: API e2e test run on github actions
+                summary: sh-usermanagement-serenityjs job integration test 
+                text: "Test report for API automation Testing"
+                theme_color: "003bd7"
+                "sections": [{
+                    "activityTitle": "Larry Bryant created a new task",
+                    "activitySubtitle": "On Project Tango",
+                    "activityImage": "https://adaptivecards.io/content/cats/3.png",
+                    "facts": [{
+                            "name": "Assigned to",
+                            "value": "Unassigned"
+                        }, {
+                            "name": "Due date",
+                            "value": "Mon May 01 2017 17:07:18 GMT-0700 (Pacific Daylight Time)"
+                        }, {
+                            "name": "Status",
+                            "value": "Not started"
+                    }],
+                    "markdown": true
+                }],
+
+
+    # parallel-jobs:
+    #     runs-on: macos-latest
+    #     steps:
+    #         - name: sw version
+    #           run: sw_vers
+    
+
+    # dependent-jobs:
+    #     runs-on: windows-latest
+    #     needs: print_hello_world
+    #     steps: 
+    #         - name: run on powershell
+    #           run: Write-Output  "Window String"

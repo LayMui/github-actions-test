@@ -1,0 +1,30 @@
+name: Token
+on: [push]
+# Sets permissions otherwise you get Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+  get-token:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        if: always()
+        id: get-token
+        with:
+            result-encoding: string
+            script: |
+                const token = await core.getIDToken()  
+                return token
+      - run: echo ${{steps.get-token.outputs.result}} > token.txt
+        if: always()
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+            name: token
+            path: token.txt
+
+
+
