@@ -1,4 +1,4 @@
-name: Checkout
+name: Token
 on: [push]
 # Sets permissions otherwise you get Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable
 permissions:
