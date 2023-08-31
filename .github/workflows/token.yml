@@ -1,5 +1,10 @@
 name: Checkout
 on: [push]
+# Sets permissions otherwise you get Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable
+permissions:
+    contents: read
+    pages: write
+    id-token: write
 
 jobs:
   get-token:
