@@ -7,4 +7,5 @@ jobs:
   echo-a-string:
     runs-on: ubuntu-latest
     steps:
-        - run: echo "Repostory Dispatch"
+        - run: echo ${{github.event.client_payload.env}}
+
