@@ -1,11 +1,11 @@
-name: External Events
-on:
-    repository_dispatch:
-     types: [build, test]
+# name: External Events
+# on:
+#     repository_dispatch:
+#      types: [build, test]
 
-jobs:
-  echo-a-string:
-    runs-on: ubuntu-latest
-    steps:
-        - run: echo ${{github.event.client_payload.env}}
+# jobs:
+#   echo-a-string:
+#     runs-on: ubuntu-latest
+#     steps:
+#         - run: echo ${{github.event.client_payload.env}}
 
